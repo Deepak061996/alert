@@ -4,16 +4,16 @@ import { useNavigation } from '@react-navigation/native';
 import StyleCss from '../ForgotPasswordScreen/StyleCss';
 import CustomButton from '../CustomComponent/CustomButton/CustomButton';
 
-
 const ForgotPasswordScreen = () => {
   const navigation = useNavigation();
 
-  const moveToBackScreen = () => {
-    navigation.goBack();
-  };
-
-  const moveToOtpScreen = () => {
-    navigation.navigate('OtpScreen');
+  // Unified navigation function
+  const handleNavigation = (type) => {
+    if (type === 'back') {
+      navigation.goBack();
+    } else if (type === 'otp') {
+      navigation.navigate('OtpScreen');
+    }
   };
 
   return (
@@ -22,7 +22,7 @@ const ForgotPasswordScreen = () => {
         source={require('../../assets/login_logo.png')} // Replace with your actual image path
         style={StyleCss.topContainer}
       >
-        <TouchableOpacity onPress={moveToBackScreen} activeOpacity={0.7}>
+        <TouchableOpacity onPress={() => handleNavigation('back')} activeOpacity={0.7}>
           <Image
             source={require('../../assets/back_icon.png')}
             style={StyleCss.imageBackForgot}
@@ -45,7 +45,7 @@ const ForgotPasswordScreen = () => {
             />
           </View>
           {/* Use the CustomButton component */}
-          <CustomButton onPress={moveToOtpScreen} title="Submit" />
+          <CustomButton onPress={() => handleNavigation('otp')} title="Submit" />
         </View>
       </View>
     </View>

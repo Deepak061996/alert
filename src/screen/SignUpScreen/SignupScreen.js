@@ -9,8 +9,8 @@ const SignUpScreen = () => {
   const navigation = useNavigation();
 
 
-  const moveToNextScreen = () => {
-    navigation.navigate("Login");
+  const handleNavigation = () => {
+    navigation.navigate('Login');
   };
 
   return (
@@ -81,7 +81,7 @@ const SignUpScreen = () => {
           <View style={StyleCss.signupTextContainer}>
             <Text style={StyleCss.commonText}>Don’t have an account?</Text>
             <TouchableOpacity>
-              <Text style={StyleCss.signupText} onPress={moveToNextScreen} >Sign Up</Text>
+              <Text style={StyleCss.signupText} onPress={handleNavigation} >Sign Up</Text>
             </TouchableOpacity>
           </View>
         </View>

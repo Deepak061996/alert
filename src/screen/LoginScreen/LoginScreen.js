@@ -15,16 +15,11 @@ const LoginScreen = () => {
     setIsChecked(!isChecked);
   };
 
-  const moveToSignUpScreen = () => {
-    navigation.navigate("Signup");
-  };
-
-  const moveToForgotScreen = () => {
-    navigation.navigate("Forgot");
+  const navigateToScreen = (screenType) => {
+    navigation.navigate(screenType);
   };
 
   return (
-
     <View style={StyleCss.container}>
 
       <Image
@@ -33,9 +28,7 @@ const LoginScreen = () => {
       />
 
       <View style={StyleCss.card_wrapper_bg}>
-
         <View style={StyleCss.card_margin}>
-
           <Text style={StyleCss.test_heading_style}> Sign In </Text>
 
           <View style={StyleCss.inputContainer}>
@@ -57,7 +50,7 @@ const LoginScreen = () => {
             <TextInput
               style={StyleCss.textInput}
               placeholder="Password"
-              secureTextEntry={true} // Mask input for passwords
+              secureTextEntry={true}
               placeholderTextColor="rgba(51, 51, 51, 1)" />
             <Image
               style={StyleCss.passIcon}
@@ -67,7 +60,6 @@ const LoginScreen = () => {
 
           <View style={StyleCss.checkboxContainer}>
             <TouchableOpacity style={StyleCss.rememberMeContainer} onPress={handleCheck}>
-              {/* Check/Uncheck Icon */}
               <Image
                 style={StyleCss.checkIcon}
                 source={
@@ -76,26 +68,28 @@ const LoginScreen = () => {
                     : require('../../assets/uncheck_box.png')
                 }
               />
-              {/* Remember Me Text */}
               <Text style={StyleCss.commonText}>Remember me</Text>
             </TouchableOpacity>
-            {/* Forgot Password */}
             <TouchableOpacity style={StyleCss.forgotPasswordContainer}>
-              <Text style={StyleCss.commonText} onPress={moveToForgotScreen} >Forgot Password ?</Text>
+              <Text
+                style={StyleCss.commonText}
+                onPress={() => navigateToScreen('Forgot')}
+              >
+                Forgot Password ?
+              </Text>
             </TouchableOpacity>
           </View>
 
           <View style={StyleCss.buttonContainer}>
             <LinearGradient
-              colors={['rgba(15, 135, 205, 1)', 'rgba(26, 105, 180, 1)', 'rgba(38, 75, 155, 1)']} // Gradient colors
+              colors={['rgba(15, 135, 205, 1)', 'rgba(26, 105, 180, 1)', 'rgba(38, 75, 155, 1)']}
               style={StyleCss.gradient}
-              start={{ x: 0, y: 0 }} // Start point (top-left)
-              end={{ x: 1, y: 1 }}   // End point (bottom-right)
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
             >
               <Text style={StyleCss.text}>Sign In</Text>
             </LinearGradient>
           </View>
-
 
           <View style={StyleCss.viewContainer}>
             <View style={StyleCss.viewStyle} />
@@ -103,18 +97,21 @@ const LoginScreen = () => {
             <View style={StyleCss.viewStyle} />
           </View>
 
-
           <View style={StyleCss.gmailContainer}>
             <Image
               style={StyleCss.googleIcon}
               source={require('../../assets/google_icon.png')} />
           </View>
 
-
           <View style={StyleCss.signupTextContainer}>
             <Text style={StyleCss.commonText}>Don’t have an account?</Text>
             <TouchableOpacity>
-              <Text style={StyleCss.signupText} onPress={moveToSignUpScreen} >Sign Up</Text>
+              <Text
+                style={StyleCss.signupText}
+                onPress={() => navigateToScreen('Signup')}
+              >
+                Sign Up
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
