@@ -4,13 +4,12 @@ import LinearGradient from 'react-native-linear-gradient';
 import StyleCss from '../ForgotPasswordScreen/StyleCss';
 import { useNavigation } from '@react-navigation/native';
 
-
-const Index = () => {
+const ForgotPasswordScreen = () => {
 
   const navigation = useNavigation();
 
   const moveToBackScreen = () => {
-    navigation.replace("Login");
+    navigation.goBack();
   };
 
   return (
@@ -64,4 +63,4 @@ const Index = () => {
 
 };
 
-export default Index;
+export default ForgotPasswordScreen;
