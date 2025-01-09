@@ -6,6 +6,7 @@ import SplashScreen from "./screen/SplashScreen/SplashScreen";
 import SignUpScreen from "./screen/SignUpScreen/SignupScreen";
 import ForgotPasswordScreen from "./screen/ForgotPasswordScreen/ForgotPasswordScreen";
 import ResetPasswordScreen from "./screen/ResetPasswordScreen/ResetPasswordScreen";
+import OtpScreen from "./screen/OtpScree/OtpScreen";
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,11 @@ const AppNavigator = () => {
                 <Stack.Screen
                     name="Forgot"
                     component={ForgotPasswordScreen}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="OtpScreen"
+                    component={OtpScreen}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen

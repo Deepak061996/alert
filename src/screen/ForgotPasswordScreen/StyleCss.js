@@ -98,10 +98,6 @@ const StyleCss = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 30,
     },
-    buttonContainer: {
-        marginHorizontal: 20,
-        marginTop: 30,
-    },
     viewContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -138,17 +134,6 @@ const StyleCss = StyleSheet.create({
         fontWeight: 400,
         marginLeft: 10,
         color: 'rgba(23, 112, 186, 1)', // Replace with light_black color code
-    },
-    gradient: {
-        height: 60,
-        borderRadius: 44.6, // Rounded corners
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        color: '#fff',
-        fontSize: 18,
-        fontWeight: 'bold',
     },
 });
 

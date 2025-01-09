@@ -117,8 +117,6 @@ const LoginScreen = () => {
               <Text style={StyleCss.signupText} onPress={moveToSignUpScreen} >Sign Up</Text>
             </TouchableOpacity>
           </View>
-
-
         </View>
       </View>
     </View>
